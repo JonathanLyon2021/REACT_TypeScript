@@ -16,4 +16,14 @@ function HeadingWithContent({ children }: { children: ReactNode }): ReactElement
   );
 }
 
+//Default props
+const defaultContainerProps = {
+  heading: <strong>My Heading</strong>
+}
+
+type ContainerProps = { children: ReactNode } & typeof defaultContainerProps; //here we let defaultContainerProps define itself with `typeof`
+
+function Container({heading, children}: { children: ReactNode } & typeof defaultContainerProps): ReactElement {
+  return <div><h1>{heading}</h1>{children}</div>;
+}
 export default App;
