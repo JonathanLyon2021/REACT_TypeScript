@@ -74,6 +74,18 @@ function List<ListItem>({
   )
 }
 
+// Class Component
+//This is how you define props, if you had any state you would define it before the curly bracket before the render() method
+class MyHeader extends React.Component<{
+  title: ReactNode,
+}> {
+  render() {
+    return (
+      <h1>{this.props.title}</h1> //this.props only bc its a class based component
+    )
+  }
+}
+
  function App() {
   return <div>
     <Heading title="Hello"></Heading>
