@@ -62,7 +62,17 @@ function List<ListItem>({
   //This listItem[] is sa part of the api signature that is generic
   items: ListItem[],
   render: (item: ListItem) => ReactNode //we take the ListItem type and render it to return a ReactNode, which is completely re-usable
-})
+}) {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>
+          {render(item)}
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 
 
