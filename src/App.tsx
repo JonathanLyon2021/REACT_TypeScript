@@ -74,7 +74,23 @@ function List<ListItem>({
   )
 }
 
- 
+ function App() {
+  return <div>
+    <Heading title="Hello"></Heading>
+    <HeadingWithContent>Jonathan</HeadingWithContent>
+    <Container>
+      Foo
+    </Container>
+    <TextWithNumber header={(num: number) => <span>Header {num}</span>}> 
+    {(num: number) => <div>Todaay's number number is: {num}</div>}
+    </TextWithNumber>
+    <List 
+    items={["Jonathan", "Mema", "Herbie", "JonBoy", "Bradley", "Tiger", "Dusty", "Lucky Bear"]} 
+    render={(item: string) => <div>{item.toLowerCase()}</div>}
+    ></List>
+    <MyHeader title="There yaa goooo!"/>
+  </div>
+}
 
 
 
