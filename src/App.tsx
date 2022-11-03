@@ -38,7 +38,20 @@ Container.defaultProps = defaultContainerProps;
 //We're sending a function instead of an array or a react node. Functional props send functions that will in turn CREATE React noodes. 
 //here we defiune the api signature of the function that we're sending in. then the output is reactNode. Directly below these are props that are functions. ie{header, children}
 function TextWithNumber({ header, children }: { header: (num: number) => ReactNode; children: (num: number) => ReactNode;} //this is a container managing state[in this case num]
+) {
+const [state, stateSet] = React.useState<number>(1); //you can also do or like <number | null>
+return(
+  <div>
+    {header &&<h2>{header?.(state)}</h2>}
+    <div>
+      {children(state)}
+    </div>
+    <div>
+      <button onClick={() => stateSet(state + 1)}>Add</button>
+    </div>
+  </div>
 ) 
+}
 
 
 
