@@ -53,7 +53,16 @@ return(
 ) 
 }
 
-
+// List
+// we are defining a list component that takes in a list of items and a render function.
+function List<ListItem>({ 
+  items,
+  render,
+}: {
+  //This listItem[] is sa part of the api signature that is generic
+  items: ListItem[],
+  render: (item: ListItem) => ReactNode //we take the ListItem type and render it to return a ReactNode, which is completely re-usable
+})
 
 
 
